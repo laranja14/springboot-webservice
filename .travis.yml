@@ -32,6 +32,17 @@ deploy:
     local_dir: deploy
     wait-until-deployed: true
     
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $ACCESS_SECRET_KEY
+    bucket: a1student14-apringboot-webservice
+    key: springboot-webservice.zip
+    bundle_type: zip
+    application: springboot-webservice
+    deployment_group: springboot-webservice-group
+    region: eu-west-1
+    wait-until-deployed: true
+    
 notification:
   email:
     recipients:
